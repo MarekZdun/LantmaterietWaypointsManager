@@ -262,7 +262,6 @@ class Map extends Component {
                 //     }       
                 // }.bind(this));
                 
-                delete parentComponent.createMapManager;
                 return this;
             },
     
