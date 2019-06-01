@@ -51,12 +51,16 @@ class Modal extends Component {
         this.props.modalActions.endShowModal();
     }
 
+    setRef(comp) {
+        this.modal = comp;
+    }
+
     render() {
         const header = (this.props.modalState.modalType != '') ? this.modalData[this.props.modalState.modalType].header : 'header'; 
         const body = (this.props.modalState.modalType != '') ? this.modalData[this.props.modalState.modalType].body : 'body';
 
         return (
-            <div ref={(comp) => { this.modal = comp; }} className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div ref={(comp) => this.setRef(comp)} className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
